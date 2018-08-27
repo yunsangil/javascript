@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+<script>
+     function calcsec(days){
+         var days;
+         var hours = 24;
+         var minutes = 60;
+         var seconds = 60;
+         var calcsec1 =  days * hours * minutes * seconds;
+     document.getElementById("demo1").innerHTML=(calcsec1);
+     //초를 입력받아 일 시 분 초를 구해보자.
+
+     }
+     function backtothe(seconds) {
+         var hour = parseInt(seconds/3600)
+         var min = parseInt((seconds%3600)/60);
+         var sec = seconds%60;
+         document.getElementById("demo").innerHTML = hour+":"+min+":" + sec
+         }
+         function input(){
+             var input = document.getElementById("input").value;
+             temp = input;
+             }
+             function output(){
+                  document.getElementById("output").value = temp;
+                   }
+            function ciga(boru){
+                var boru=3;
+                var one_ciga=100;
+                 var one_gap=20;
+                 var one_boru=10;
+                 var boru_price=boru * one_boru * one_gap * one_ciga;
+                 document.getElementById("dambae").innerHTML = (boru_price);
+                 }
+            function triangle(under,height){
+
+                var area = under * height * 1/2;
+                document.getElementById("trianglearea").innerHTML = area;
+            }
+            function square(under,height){
+
+                var area = under * height;
+                document.getElementById("squarearea").innerHTML = area;
+            }
+            function circle(halfwidth){
+                var area = 3.14 * halfwidth * halfwidth;
+                document.getElementById("circlearea").innerHTML = area;
+}
+            function underinput(){
+             var input = document.getElementById("under").value;
+             under = input;
+             }
+             function underoutput(){
+                  document.getElementById("underline").value = under;
+                   }
+
+            function heightinput(){
+             var input = document.getElementById("height").value;
+             height = input;
+             }
+             function heightoutput(){
+                  document.getElementById("heightline").value = height;
+                   }
+            function widthinput(){
+                var input = document.getElementById("width").value;
+                width = input;
+                }
+             function widthoutput(){
+                document.getElementById("widthline").value = width;
+                }
+            function gulbi(){
+                var gulbi_price=1000;
+                var gulbi_hanson=20;
+
+                document.getElementById("gulbi").innerHTML = gulbi_price * gulbi_hanson;
+            }
+
+
+
+</script>
+
+</head>
+<body onload="calcsec(5),ciga(3),gulbi()">
+
+<p>1.5일이 몇초인지 구해보자.</p>
+
+
+<p id="demo1"></p>
+
+
+<p>초를 시 분 초로 변경</p>
+<input type="text" id="input"><br>
+<textarea id="output"></textarea>
+ <button onclick="input()">초 입력받기</button>
+<button onclick="output()">값 전송</button>
+
+<button onclick="backtothe(temp)">초를 시간으로 변경하기</button>
+
+<p id="demo"></p>
+
+<p>담배 3보루의 가격을 구하여라 1가피는 100원이다.</p>
+<p id="dambae"></p>
+
+<p>도형 넓이 시리즈<br>
+사용법 : 삼각형, 사각형은 밑변->값 전송 순서대로 하고 넓이를 누르십시오<br>
+원의 넓이는 반지름->값 전송 순서대로 하고 넓이를 누르십시오</p>
+<input type="text" id="under"><br>
+<textarea id="underline"></textarea>
+ <button onclick="underinput()">밑변</button>
+<button onclick="underoutput()">값 전송</button><br>
+
+
+<input type="text" id="height"><br>
+<textarea id="heightline"></textarea>
+ <button onclick="heightinput()">높이</button>
+<button onclick="heightoutput()">값 전송</button><br>
+
+<input type="text" id="width"><br>
+<textarea id="widthline"></textarea>
+ <button onclick="widthinput()">반지름</button>
+<button onclick="widthoutput()">값 전송</button><br><br>
+
+<button onclick="triangle(under,height)">삼각형의 넓이</button>
+<button onclick="square(under,height)">사각형의 넓이</button>
+<button onclick="circle(width)">원의 넓이</button>
+
+<p id="trianglearea"></p>
+
+<p id="squarearea"></p>
+
+<p id="circlearea"></p>
+
+<p>굴비 한 손의 가격 ( 굴비 한 마리는 1000원이다. 한손은 20마리이다)</p>
+
+<p id="gulbi"></p>
+
+
+</body>
+</html>
