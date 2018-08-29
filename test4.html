@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+            //프로그램 구현하는 알고리즘 3가지
+            /*
+            1. 절차적 언어
+                보통 언어는 main에서 부터 순서대로 실행이 된다.
+                javascript는 <script> 부분에서 위에서 아래로 순서대로 실행이 됨.
+            2. 반복문
+                특정 부분을 반복해서 실행하게 해준다.
+                (for, do~while, while)
+            3. 제어문
+                특정 부분을 사용하거나 사용하지 않을 것을 결정 할 수 있다.
+                (if,if~else,switch)
+                CTRL + / = 행 주석 처리
+
+                if 문
+                if(조건식) - 조건식 : 참, 거짓인지 알 수 있는 식.
+                {
+                    실행코드; ex) document.write("조건문 실행");
+                }
+            if(a>b){
+                document.write("조건문 실행");
+            }
+            else{
+                document.write("실행종료");
+            }
+
+            조건식이 true면 실행 코드가 실행됨. 조건식이 false면 실행코드가 실행되지 않음.
+
+            조건식 : 비교연산자, true/false,
+
+            var a=prompt("a 변수 입력?"); <--변수를 입력하는 다른 방법
+
+
+
+
+            */
+           //변수 a,b를 선언하고 a가 b보다 크면 a가 크다.
+           //b가 a보다 크면 b가 크다가 출력되도록 if문만 사용해서 구현해보자.
+           function Ainput(){
+               input = document.getElementById("A").value;
+               A = input;
+           }
+           function Binput(){
+               input = document.getElementById("B").value;
+               B = input;
+           }
+           function compareAorB(A,B){
+               if(A>B)
+               {
+                   document.getElementById("compare").innerHTML="A가 크다";
+
+               }
+               else if(B>A)
+               {
+                   document.getElementById("compare").innerHTML="B가 크다";
+               }
+           }
+
+           /*
+           사용자가 입력한 값이 100보다 크면 100보다 크다
+           같으면 같다
+           작으면 작다가 출력되도록 프로그램을 구현해보자.
+
+           사용자가 입력한 값이 짝수이면 짝수 홀수이면 홀수를 출력해보자.
+           */
+
+           function comparehundredinput(){
+               input = document.getElementById("hundred").value;
+               hundred = input;
+           }
+           function oddeveninput(){
+               input = document.getElementById("oddeven").value;
+               oddeven = input;
+           }
+
+           function comparehundred(hundred){
+               if(hundred>100)
+               {
+                   document.getElementById("comparehundred").innerHTML="100보다 크다";
+               }
+               else if(hundred<100)
+               {
+                   document.getElementById("comparehundred").innerHTML="100보다 작다";
+               }
+               else
+               {
+                   document.getElementById("comparehundred").innerHTML="100과 같다";
+               }
+           }
+           function compareoddeven(oddeven)
+           {
+               if(oddeven%2==0)
+               {
+                   document.getElementById("compareoddeven").innerHTML="짝수입니다.";
+                }
+                else
+                {
+                    document.getElementById("compareoddeven").innerHTML="홀수입니다.";
+                }
+           }
+           function compareprompt()
+           {
+               var a=prompt("A 변수 입력");
+
+               if (a>100)
+               {
+                   document.getElementById("compareprompt").innerHTML="100보다 크다.";
+
+               }
+               else if(a<100)
+               {
+                   document.getElementById("compareprompt").innerHTML="100보다 작다.";
+               }
+               else
+               {
+                   document.getElementById("compareprompt").innerHTML="100과 같다";
+
+               }
+
+           }
+</script>
+
+</head>
+<body onload="compareprompt()">
+<p>A,B 값 비교</p>
+<input type="text" id="A">
+<button onclick="Ainput()">A값 입력</button><br><br><br>
+
+
+<input type="text" id="B">
+<button onclick="Binput()">B값 입력</button><br><br><br>
+
+<button onclick="compareAorB(A,B)">A,B값 비교</button>
+<p id="compare"></p>
+
+<p>100보다 큰지, 작은지, 같은지 비교</p>
+<input type="text" id="hundred">
+<button onclick="comparehundredinput()">100비교 값 입력</button><br><br><br>
+
+
+<button onclick="comparehundred(hundred)">100보다 큰지, 작은지, 같은지?</button>
+<p id="comparehundred"></p>
+
+<p>홀/짝?</p>
+
+<input type="text" id="oddeven">
+<button onclick="oddeveninput()">홀짝 값 입력</button><br><br><br>
+
+<button onclick="compareoddeven(oddeven)">홀? 짝?</button>
+
+<p id="compareoddeven"></p>
+
+<p id="compareprompt"></p>
+</body>
+</html>
