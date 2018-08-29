@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+<script>
+            function candy(money){
+                var candy_amount = parseInt(money/300);
+                var money_change = parseInt(money%300);
+                document.getElementById("candy").innerHTML = "구매 가능 사탕 갯수 :"+candy_amount +",  " +"잔돈 :" +money_change;
+            }
+
+         function moneyinput(){
+             var input = document.getElementById("money").value;
+             money = input;
+             }
+             /*자동판매기 프로그램
+             자동판매기를 시뮬레이션 하는 프로그램을 작성해보자.
+             자동판매기는 사용자로부터 투입한 돈과 물건 값을
+             입력 받는다. 물건 값은 10원 단위라고 가정한다.
+             프로그램은 잔돈을 계산하여 출력한다. 자판기는 동전 100원,
+             10원짜리만 가지고 있다고 가정하자.
+             */
+
+         function vendingmoneyinput(){
+             var input = document.getElementById("vendingmoney").value;
+             money = input;
+             }
+         function priceinput(){
+             var input = document.getElementById("price").value;
+             price = input;
+             }
+             function vendingmachine(money,price){
+                var money_change_100won = parseInt((money-price)/100);
+                var money_change_10won = parseInt(((money-price)-(100*money_change_100won))/10);
+                document.getElementById("vendingmachine").innerHTML = "100원 거스름 :"+money_change_100won +",  " +"10원 거스름 :" +money_change_10won;
+            }
+</script>
+
+</head>
+<body>
+
+
+<p>최대로 살 수 있는 사탕의 개수 계산하기</p>
+<input type="text" id="money">
+ <button onclick="candy(document.getElementById('money').value)">최대 구매 사탕 개수 계산</button>
+
+<p id="candy"></p>
+
+<p>자동 판매기 프로그램</p>
+
+<div>
+  Money<br>
+  <input type="text" id="vendingmoney">
+</div>
+<div>
+  Price<br>
+  <input type="text" id="price">
+</div>
+
+<button onclick="vendingmachine(document.getElementById('vendingmoney').value,
+                                document.getElementById('price').value)">
+  자판기 시뮬레이터, 100원짜리, 10원짜리 출력
+</button>
+
+<p id="vendingmachine"></p>
+</body>
+</html>
