@@ -4,6 +4,7 @@
 <head>
 <meta charset="euc-kr" />
 <title>Page Title</title>
+</head>
 <script>
             function candy(money){
                 var candy_amount = parseInt(money/300);
@@ -27,14 +28,20 @@
              var input = document.getElementById("vendingmoney").value;
              money = input;
              }
+        function amountinput(){
+             var input = document.getElementById("amount").value;
+             amount = input;
+             }
          function priceinput(){
              var input = document.getElementById("price").value;
              price = input;
              }
-             function vendingmachine(money,price){
-                var money_change_100won = parseInt((money-price)/100);
-                var money_change_10won = parseInt(((money-price)-(100*money_change_100won))/10);
-                document.getElementById("vendingmachine").innerHTML = "100원 거스름 :"+money_change_100won +",  " +"10원 거스름 :" +money_change_10won;
+             function vendingmachine(money,price,amount){
+                var change=money-(price*amount)
+                var money_change_500won = parseInt((change)/500);
+                var money_change_100won = parseInt((change%500)/100)
+                var money_change_10won = parseInt(((change%500)%100)/10);
+                document.getElementById("vendingmachine").innerHTML = "투입한 돈 :"+money+"<br>"+"물건의 가격:"+price+"<br>"+"구매수량 : "+amount+"<br>"+"계산식 :"+money+"-"+"("+price+"*"+amount+")"+"<br>"+"잔돈 :" + change + "<br> 500원 거스름 :"+money_change_500won +",  " +"100원 거스름 :"+money_change_100won+","+"10원 거스름 :" +money_change_10won;
             }
 </script>
 
@@ -42,7 +49,7 @@
 <body>
 
 
-<p>최대로 살 수 있는 사탕의 개수 계산하기</p>
+<p>최대로 살 수 있는 사탕의 개수 계산하기<br>단, 사탕은 개당 300원이다.</p>
 <input type="text" id="money">
  <button onclick="moneyinput()">돈</button><br><br><br>
  <button onclick="candy(money)">최대 구매 사탕 개수 계산</button>
@@ -57,8 +64,11 @@
 <input type="text" id="price">
 <button onclick="priceinput()">가격</button><br><br><br>
 
-<button onclick="vendingmachine(money,price)">자판기 시뮬레이터, 100원짜리, 10원짜리 출력</button>
 
+<input type="text" id="amount">
+<button onclick="amountinput()">수량</button><br><br><br>
+
+<button onclick="vendingmachine(money,price,amount)">자판기 시뮬레이터, 500원짜리, 100원짜리, 10원짜리 출력</button>
 <p id="vendingmachine"></p>
 </body>
 </html>
