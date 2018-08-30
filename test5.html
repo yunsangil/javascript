@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+/*
+1. 사용자로부터 2개의 정수를 받아서 첫번째 정수를 두번째 정수로 나누었을 때
+몫과 나머지를 계산하는 프로그램을 작성하여라..
+
+2. 사용자로부터 하나의 정수를 받아서 정수의 세제곱 값을 계산하여
+출력하는 프로그램을 작성하여라.
+ex ) 입력값이 3이면 출력값이 3*3*3= 27을 출력하면 된다.
+
+3. 사용자로부터 3개의 정수를 받아서 변수 x,y,z에 저장하고
+다음 수식(x*y-z)의 결과를 출력하는 프로그램을 작성하여라.
+ex) 입력값 : 1,2,3
+    출력값 : 1*2-3=1
+4. 세자리로 이루어진 숫자를 입력받은 후에
+각각 자리수를 분리하고 이 자리수를 출력하는 프로그램을 작성하라.
+
+5.다음 수식의 값을 계산하여서 화면에 출력하라. x의 값은 사용자로부터 입력 받는다.
+f(x)=(x3-20)/(x-7)
+ex)x3은 x의 3제곱으로 x를 3번곱한 것과 같다 x*x*x
+-->(x 세제곱-20)/(x-7)
+입력값 : 10
+출력값 : 326.6666
+
+6. 2차원 광간에서 두점 사이의 거리를 계산하는 프로 그램을 작성한다.
+
+입력값 :
+첫번째점 x1,y1 :10 20
+두번째점 x2,y2 :30 40
+
+출력값
+거리는 28.28471
+
+//제곱근을 구하는 공식은 다음과 같다.
+//alert(Math.sqrt(9.0));  3
+//alert(Math.sqrt(4.0));  2
+
+두점의거리를 구하는 방법 으로 검색해서 해보자.
+http://www.mathbang.net/138
+
+*/
+function divine(A,B)
+{
+    var divine = parseInt(A/B);
+    var rest = parseInt(A%B);
+    document.getElementById("resultA").innerHTML="식 :"+A+"/"+B+"=<br>"+"몫 :"+divine+" ,"+"나머지"+rest;
+    var A=0;
+    var B=0;
+
+}
+function Ainput(){
+    input = document.getElementById("A").value;
+    A = input;
+}
+function Binput(){
+    input = document.getElementById("B").value;
+    B = input;
+}
+
+function triple(C)
+{
+    var triple = C * C * C;
+    document.getElementById("triple").innerHTML="식 :"+C+"*"+C+"*"+C+"=<br>"+"답 :"+triple;
+    var C=0;
+}
+function Cinput(){
+    input = document.getElementById("C").value;
+    C = input;
+}
+function calc(A,B,C)
+{
+    var calc = A*B-C;
+    document.getElementById("calc").innerHTML="식 :"+A+"*"+B+"-"+C+"=<br>"+"답 :"+calc;
+}
+
+function Dinput(){
+    input = document.getElementById("D").value;
+    D = input;
+}
+function Einput(){
+    input = document.getElementById("E").value;
+    E = input;
+}
+function Finput(){
+    input = document.getElementById("F").value;
+    F = input;
+}
+function decsystem(G){
+    var hundred = parseInt(G/100);
+    var ten = parseInt((G%100)/10);
+    var unit = parseInt((G%100)%10);
+    document.getElementById("dec").innerHTML="입력값 :"+G+"<br>"+"출력값 :"+"<br>"+"100의 자리 :"+hundred+"<br>"+"10의 자리 :"+ten+"<br>"+"1의 자리 :"+unit;
+}
+function Ginput(){
+    input = document.getElementById("G").value;
+    G = input;
+}
+function calc2(H){
+    var triplex=H * H * H;
+    var calcA = triplex-20;
+    var calcB = H-7;
+    var result = calcA/calcB;
+    document.getElementById("calc2").innerHTML = "입력값 :" +H+"<br>"+"수식 :"+"("+H+"^3"+"-20"+")"+"/"+"("+H+"-7"+")<br>"+"결과값 :"+result;
+}
+
+function Hinput(){
+    input = document.getElementById("H").value;
+    H = input;
+}
+function calc3(x1,x2,y1,y2){
+
+    var calcA = x2-x1;
+    var calcB = y2-y1;
+    var calcAsquare = calcA * calcA;
+    var calcBsquare = calcB * calcB;
+    var beforeresult = calcAsquare + calcBsquare;
+    var result = Math.sqrt(beforeresult);
+
+    document.getElementById("calc3").innerHTML = "입력값 :<br>"+"x1 :"+x1+"<br>"+"x2 :"+x2+"<br>"+"y1 :"+y1+"<br>"+"y2 :"+y2+"<br>"+"계산식 :"+ "√"+"("+"("+x2+"-"+x1+")"+"^2"+"+"+"("+y2+"-"+y1+")"+"^2"+")"+"=<br>"+"결과값 :"+result;
+
+
+}
+
+function Iinput(){
+    input = document.getElementById("I").value;
+    I = input;
+}
+function Jinput(){
+    input = document.getElementById("J").value;
+    J = input;
+}
+function Kinput(){
+    input = document.getElementById("K").value;
+    K = input;
+}
+function Linput(){
+    input = document.getElementById("L").value;
+    L = input;
+}
+</script>
+
+</head>
+<body>
+<p>1번 문제</p>
+<input type="text" id="A">
+<button onclick="Ainput()">A값 입력</button><br><br><br>
+
+
+<input type="text" id="B">
+<button onclick="Binput()">B값 입력</button><br><br><br>
+
+<button onclick="divine(A,B)">A/B는?</button>
+<p id="resultA"></p>
+
+<p>2번 문제</p>
+<input type="text" id="C">
+<button onclick="Cinput()">세제곱 계산식에 넣을 정수 입력</button><br><br><br>
+
+<button onclick="triple(C)">입력한 정수를 바탕으로 세제곱 계산</button>
+<p id="triple"></p>
+
+<p>3번 문제</p>
+<input type="text" id="D"">
+<button onclick="Dinput()">A값 입력</button><br><br><br>
+
+
+<input type="text" id="E">
+<button onclick="Einput()">B값 입력</button><br><br><br>
+
+
+<input type="text" id="F">
+<button onclick="Finput()">C값 입력</button><br><br><br>
+
+<button onclick="calc(D,E,F)">입력한 정수를 바탕으로 A*B-C계산</button>
+
+<p id="calc"></p>
+
+<p>4번 문제</p>
+<input type="text" id="G">
+<button onclick="Ginput()">숫자 입력</button><br><br><br>
+
+<button onclick="decsystem(G)">십진법 자릿수 분해 1~999까지 가능</button>
+<p id="dec"></p>
+
+<p>5번 문제</p>
+<input type="text" id="H">
+<button onclick="Hinput()">숫자 입력</button><br><br><br>
+
+
+<button onclick="calc2(H)">(x^3-20)/(x-7) 계산</button>
+<p id="calc2"></p>
+
+<p>6번 문제</p>
+<p>x2, y2는 각각 x1, y1보다 클 수 없다.</p>
+
+<input type="text" id="I">
+<button onclick="Iinput()">x1 입력</button><br><br><br>
+
+<input type="text" id="J">
+<button onclick="Jinput()">x2 입력</button><br><br><br>
+
+<input type="text" id="K">
+<button onclick="Kinput()">y1 입력</button><br><br><br>
+
+<input type="text" id="L">
+<button onclick="Linput()">y2 입력</button><br><br><br>
+
+
+<button onclick="calc3(I,J,K,L)">두점 사이 거리 계산</button>
+<p id="calc3"></p>
+</body>
+</html>
