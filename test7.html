@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+/*
+1. 체중관리 프로그램
+체중(kg)과 키(cm)를 입력하여 BMI(신체질량지수)를 구한 후에 BMI 값이 20.0 이상 25.0 미만이면 "표준입니다"를 출력하고
+그렇지 않으면 "체중관리가 필요합니다."를 출력합니다.
+BMI = 표준체중,저체중,과체중을 판별하는 수치로 몸무게를 키의 제곱으로 나누어 구한다.
+이때, 키는 미터 단위로 계산한다.
+
+2.캐셔 프로그램
+편의점에서 다음과 같이 물건을 구입하고 만원을 냈을 때 전체 거스름돈의 액수와 그에 따라 캐셔가 지급해야 할
+가장 적은 수의 화폐와 동전 수를 계산하는 프로그램 입니다.
+
++돈 입력을 입력받고 물건의 가격에 따른, 거슬러 줄 가격을 생각해보자.
+
+3.자동차 주행시간 측정 프로그램
+거리(km)와 속력(km/h)을 입력받은 후에 시간을 계산하여 출력합니다. 단, 다음 조건을 만족하도록 작성합니다.
+-->거리와 속력을 입력받을 변수는 int 형으로 선언하고 시간, 분을 저장할 변수도 int 형으로 선언합니다.
+초는 소수점 이하 셋째자리까지 출력합니다.
+
+4. 야구경기장의 좌석수가 70개고 입장객수가
+ 65명일때 입장률을 출력합니다.
+
+-->92.9%
+
+
+5. 3.76시간은 몇시간,몇분,몇초인지 출력합니다.
+
+-->3시간 45분 35초
+*/
+function BMI(kg,cm){
+    if (cm>100&&cm<200){
+        cm/=100;
+
+    }
+    else{
+        document.getElementById("Errorcheck").innerHTML="경고 ! 미터 단위로 입력해주세요";
+    }
+    var BMI=Math.round(Math.pow(cm,2)/kg * 1000)/1000.0;
+
+    if(BMI>=20&&BMI<25)
+    {
+        document.getElementById("BMIcheck").innerHTML="당신의 BMI 수치는 "+BMI+" 표준입니다.";
+    }
+    else{
+        document.getElementById("BMIcheck").innerHTML="당신의 BMI 수치는 "+BMI+" 체중 관리가 필요합니다.";
+    }
+}
+function Ainput(){
+    input = document.getElementById("A").value;
+    A = input;
+}
+function Binput(){
+    input = document.getElementById("B").value;
+    B = input;
+}
+
+
+function Casher(C,D,E,F)
+{
+    var D=D/1; //price를 저장할때 변수명도 바꿔보고 별 난리를 다 해봤는데
+                // /1로 해줘야 내가 입력한 숫자 그대로 저장되는 현상 확인
+    var E=E/1;
+    var F=F/1;
+
+    var price=(D+E+F);
+    var change=C-price;
+    var change_10000won=parseInt(change/10000);
+    var change_5000won=parseInt((change%10000)/5000);
+    var change_1000won=parseInt(((change%10000)%5000)/1000);
+    var change_500won=parseInt(((change%10000)%5000)%1000)/500;
+    var change_100won=parseInt((((change%10000)%5000)%1000)%500)/100;
+    var change_50won=parseInt(((((change%10000)%5000)%1000)%500)%100)/50;
+    var change_10won=parseInt((((((change%10000)%5000)%1000)%500)%100)%50)/10;
+    document.getElementById("Casherresult").innerHTML="낸 돈은"+C+"이며, <br>"+"치러야 할 값은"+price+"이며, <br>"+"거스름 돈은 :"+change+"이고, <br>"+"10000원짜리 "+change_10000won+"개,<br>"+"5000원짜리 "+change_5000won+"개,<br>"+"1000원짜리 "+change_1000won+"개,<br>"+"500원짜리 "+change_500won+"개,<br>"+"100원짜리 "+change_100won+"개,<br>"+"50원짜리 "+change_50won+"개,<br>"+"10원짜리 "+change_10won+"개,<br>"+"를 거슬러 주시면 됩니다."
+
+
+}
+function Cinput(){
+    input = document.getElementById("C").value;
+    C = input;
+}
+function Dinput(){
+    input = document.getElementById("D").value;
+    D = input;
+}
+function Einput(){
+    input = document.getElementById("E").value;
+    E = input;
+}
+function Finput(){
+    input = document.getElementById("F").value;
+    F = input;
+}
+function traveltime(G,H){
+    var G=G/1;
+    var H=H/1;
+    var traveltime_default = G/H;
+    var traveltime_hour = parseInt(traveltime_default);
+    var traveltime_minute_default=(traveltime_default-traveltime_hour)*60
+    var traveltime_minute =parseInt(traveltime_minute_default);
+    var traveltime_second =Math.round(((traveltime_minute_default-traveltime_minute)*60) *1000)/1000.0;
+    document.getElementById("traveltime").innerHTML="입력 거리는 :"+G+"<br>"+"입력하신 속력은 :"+H+"<br>"+"소요 시간은 <br>"+traveltime_hour+"시간"+traveltime_minute+"분"+traveltime_second+"초 입니다."
+}
+function Ginput(){
+    input = document.getElementById("G").value;
+    G = input;
+}
+function Hinput(){
+    input = document.getElementById("H").value;
+    H = input;
+}
+</script>
+
+</head>
+<body>
+<p>1번 문제</p>
+<input type="text" id="A">
+<button onclick="Ainput()">키 입력</button><br><br><br>
+
+<input type="text" id="B">
+<button onclick="Binput()">체중 입력</button><br><br><br>
+
+<button onclick="BMI(A,B)">BMI 체크</button>
+
+<p id="Errorcheck"></p>
+
+<p id="BMIcheck"></p>
+
+<p>2번 문제</p>
+<input type="text" id="C">
+<button onclick="Cinput()">낼 돈 입력</button><br><br><br>
+
+<input type="text" id="D">
+<button onclick="Dinput()">물건 가격 1 입력</button><br><br><br>
+
+<input type="text" id="E">
+<button onclick="Einput()">물건 가격 2 입력</button><br><br><br>
+
+<input type="text" id="F">
+<button onclick="Finput()">물건 가격 3 입력</button><br><br><br>
+
+<button onclick="Casher(C,D,E,F)">캐셔 프로그램 실행</button>
+
+
+<p id="Casherresult"></p>
+
+<p>3번 문제</p>
+
+
+<input type="text" id="G">
+<button onclick="Ginput()">거리 입력</button><br><br><br>
+
+<input type="text" id="H">
+<button onclick="Hinput()">속력 입력</button><br><br><br>
+
+
+<button onclick="traveltime(G,H)">시간=거리/속력. 확인?</button>
+<p id="traveltime"></p>
+</body>
+</html>

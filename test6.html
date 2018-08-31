@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+/*
+1. 사용자에게 입력을 받아 입력한 값이 1004이면 암호가 맞습니다.
+아니면 암호가 틀렸습니다. 를 출력하는 프로그램을 작성하시오.
+
+2.숫자를 입력받아서 양수인지 음수인지 0인지 출력하는 프로그램을 작성하시오.
+*/
+function Ainput(){
+    input = document.getElementById("A").value;
+    A = input;
+}
+function Binput(){
+    input = document.getElementById("B").value;
+    B = input;
+}
+
+function password(pass){
+
+    if(pass==1004){
+        document.getElementById("passcheck").innerHTML="암호가 맞습니다.";
+    }
+    else{
+        document.getElementById("passcheck").innerHTML="암호가 틀렸습니다.";
+    }
+
+}
+function checknumber(number){
+    if(number>0){
+        document.getElementById("checknum").innerHTML="양수입니다.";
+
+    }
+    else if(number<0){
+        document.getElementById("checknum").innerHTML="음수입니다.";
+    }
+    else if(number==0){
+        document.getElementById("checknum").innerHTML="0입니다.";
+    }
+    else{
+        document.getElementById("checknum").innerHTML="숫자를 입력해주세요";
+    }
+}
+</script>
+
+</head>
+<body>
+<p>1번 문제</p>
+<input type="text" id="A">
+<button onclick="Ainput()">패스워드 입력</button><br><br><br>
+
+<button onclick="password(A)">패스워드 체크</button>
+
+<p id="passcheck"></p>
+
+<p>2번 문제</p>
+<input type="text" id="B">
+<button onclick="Binput()">양수/음수/0 체크할 숫자 입력</button><br><br><br>
+<button onclick="checknumber(B)">확인</button>
+
+
+<p id="checknum"></p>
+</body>
+</html>
