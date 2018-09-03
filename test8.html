@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+/*
+3개의 수를 입력받아 가장 큰 수를 출력하는 프로그램을 작성하시오.
+*/
+function compareAorBorC(A,B,C){
+    A=A/1;
+    B=B/1;
+    C=C/1;
+
+    if (A>B&&A>C){
+
+        document.getElementById("biggest").innerHTML="가장 큰 수는"+A+"입니다.";
+        if (B>C){
+            document.getElementById("bigger").innerHTML="그 다음으로 큰 수는"+B+"입니다.";
+            document.getElementById("smallest").innerHTML="가장 작은 수는"+C+"입니다.";
+        }
+        else if(C>B){
+
+            document.getElementById("bigger").innerHTML="그 다음으로 큰 수는"+C+"입니다.";
+            document.getElementById("smallest").innerHTML="가장 작은 수는"+B+"입니다.";
+        }
+        else if(C==B){
+            document.getElementById("bigger").innerHTML="그 다음으로 큰 수는"+C+"이며, 두번쨰 입력한 숫자와<br>세번째 입력한 숫자가 같습니다."
+            document.getElementById("smallest").innerHTML="";
+        }
+
+
+    }
+    else if (B>A&&B>C){
+        document.getElementById("biggest").innerHTML="가장 큰 수는"+B+"입니다.";
+        if (A>C){
+            document.getElementById("bigger").innerHTML="그 다음으로 큰 수는"+A+"입니다.";
+            document.getElementById("smallest").innerHTML="가장 작은 수는"+C+"입니다.";
+
+        }
+        else if(C>A){
+
+            document.getElementById("bigger").innerHTML="그 다음으로 큰 수는"+C+"입니다.";
+            document.getElementById("smallest").innerHTML="가장 작은 수는"+A+"입니다.";
+        }
+        else if(A==C){
+            document.getElementById("bigger").innerHTML="그 다음으로 큰 수는"+C+"이며, 첫번쨰 입력한 숫자와<br>세번째 입력한 숫자가 같습니다."
+            document.getElementById("smallest").innerHTML="";
+        }
+    }
+    else if(C>A&&C>B){
+        document.getElementById("biggest").innerHTML="가장 큰 수는"+C+"입니다";
+        if (A>B){
+
+            document.getElementById("bigger").innerHTML="그 다음으로 큰 수는"+A+"입니다.";
+            document.getElementById("smallest").innerHTML="가장 작은 수는"+B+"입니다.";
+        }
+        else if(B>A){
+
+            document.getElementById("bigger").innerHTML="그 다음으로 큰 수는"+B+"입니다.";
+            document.getElementById("smallest").innerHTML="가장 작은 수는"+A+"입니다.";
+        }
+        else if(A==B){
+            document.getElementById("bigger").innerHTML="그 다음으로 큰 수는"+A+"이며, 첫번쨰 입력한 숫자와<br>두번째 입력한 숫자가 같습니다."
+            document.getElementById("smallest").innerHTML="";
+        }
+    }
+    else if(A==B&&A>C){
+        document.getElementById("biggest").innerHTML="가장 큰 수는 "+B+"이며, 첫번째 입력한 숫자와<br>두번째 입력한 숫자가 같습니다."
+        document.getElementById("bigger").innerHTML="";
+        document.getElementById("smallest").innerHTML="가장 작은 수는"+C+"입니다.";
+    }
+    else if(A==C&&A>B){
+        document.getElementById("biggest").innerHTML="가장 큰 수는 "+C+"이며, 첫번째 입력한 숫자와<br>세번째 입력한 숫자가 같습니다."
+        document.getElementById("bigger").innerHTML="";
+        document.getElementById("smallest").innerHTML="가장 작은 수는"+B+"입니다.";
+
+    }
+    else if(B==C&&B>A){
+
+        document.getElementById("biggest").innerHTML="가장 큰 수는 "+C+"이며, 두번째 입력한 숫자와<br>세번째 입력한 숫자가 같습니다."
+        document.getElementById("bigger").innerHTML="";
+        document.getElementById("smallest").innerHTML="가장 작은 수는"+A+"입니다.";
+    }
+    else if(A==B&&A==C){
+        document.getElementById("biggest").innerHTML="세 수가 같습니다.";
+        document.getElementById("bigger").innerHTML="";
+        document.getElementById("smallest").innerHTML="";
+    }
+
+    else{
+        document.getElementById("biggest").innerHTML="문자가 포함된 숫자를 입력하셨습니다.";
+        document.getElementById("bigger").innerHTML="";
+        document.getElementById("smallest").innerHTML="";
+    }
+}
+function timetoeat(time){
+
+    var time=time/1;
+    if (time<11){
+        document.getElementById("timetoeat").innerHTML="아침먹을 시간입니다.";
+
+    }
+    else if(time>=11&&time<15){
+        document.getElementById("timetoeat").innerHTML="점심먹을 시간입니다.";
+    }
+    else if(time>15&&time<=24){
+        document.getElementById("timetoeat").innerHTML="저녁먹을 시간입니다.";
+    }
+    else{
+        document.getElementById("timetoeat").innerHTML="시간을 입력해주세요 (1~24)";
+    }
+
+
+}
+function Ainput(){
+    input = document.getElementById("A").value;
+    A = input;
+}
+function Binput(){
+    input = document.getElementById("B").value;
+    B = input;
+}
+function Cinput(){
+    input = document.getElementById("C").value;
+    C = input;
+}
+function Dinput(){
+    input = document.getElementById("D").value;
+    D = input;
+}
+
+</script>
+
+</head>
+<body>
+<p>1번 문제</p>
+<input type="text" id="A">
+<button onclick="Ainput()">숫자 1 입력</button><br><br><br>
+
+<input type="text" id="B">
+<button onclick="Binput()">숫자 2 입력</button><br><br><br>
+
+<input type="text" id="C">
+<button onclick="Cinput()">숫자 3 입력</button><br><br><br>
+
+<button onclick="compareAorBorC(A,B,C)">세 숫자 비교</button>
+
+<p id="biggest"></p>
+<p id="bigger"></p>
+<p id="smallest"></p>
+
+
+<input type="text" id="D">
+<button onclick="Dinput()">시간 입력</button><br><br><br>
+
+<button onclick="timetoeat(D)">무슨 밥 먹을 시간?</button>
+
+<p id="timetoeat"></p>
+</body>
+</html>

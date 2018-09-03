@@ -116,6 +116,49 @@ function Hinput(){
     input = document.getElementById("H").value;
     H = input;
 }
+
+function checkpercent(I){
+
+    var I=I/1;
+    var entire=70;
+
+    var checkpercent = Math.round(I/entire*100*10)/10.0;
+
+    if(I<=70){
+    document.getElementById("checkresult").innerHTML="입장률을 체크합니다.<br>"+"입장률은"+checkpercent+"% 입니다.";
+    }
+    else if(I>70){
+        document.getElementById("checkresult").innerHTML="전체 좌석 수를 초과하는 수를 입력하셨습니다.";
+    }
+    else{
+        document.getElementById("checkresult").innerHTML="숫자를 입력해주세요.";
+    }
+}
+
+function Iinput(){
+    input = document.getElementById("I").value;
+    I = input;
+}
+/*5. 3.76시간은 몇시간,몇분,몇초인지 출력합니다.
+
+-->3시간 45분 35초
+*/
+function checktime(J){
+
+    var J=J/1;
+
+    var hours=parseInt(J);
+    var minutes_default=(J-hours)*60
+    var minutes=parseInt(minutes_default);
+    var seconds=parseInt((minutes_default-minutes)*60)
+    document.getElementById("checktime").innerHTML=J+"시간으로 입력했을때 산출 되는 시,분,초의 값은 <br>"+hours+"시간"+minutes+"분"+seconds+"초 입니다."
+
+}
+
+function Jinput(){
+    input = document.getElementById("J").value;
+    J = input;
+}
 </script>
 
 </head>
@@ -163,5 +206,22 @@ function Hinput(){
 
 <button onclick="traveltime(G,H)">시간=거리/속력. 확인?</button>
 <p id="traveltime"></p>
+
+<p>4번 문제</p>
+<p>좌석 수는 70으로 고정되있다.</p>
+<input type="text" id="I">
+<button onclick="Iinput()">입장객수 입력</button><br><br><br>
+
+<button onclick="checkpercent(I)">입장률 확인</button>
+<p id="checkresult"></p>
+
+<p>5번 문제</p>
+
+<input type="text" id="J"">
+<button onclick="Jinput()">시간 입력 x.xx시간은?</button><br><br><br>
+
+
+<button onclick="checktime(J)">변환 확인</button>
+<p id="checktime"></p>
 </body>
 </html>
