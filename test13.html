@@ -36,7 +36,6 @@ function calender(A,B){
     var day=0;
     document.getElementById("year").innerHTML=A+"년"+B+"월의 일수는"
 
-    if (A%4==0){
         switch(B){
             case 1:
             case 3:
@@ -47,7 +46,12 @@ function calender(A,B){
             document.getElementById("calenderresult").innerHTML="31일 입니다.";
             break;
             case 2:
+            if (A%4==0){
             document.getElementById("calenderresult").innerHTML="29일 입니다.";
+            }
+            else{
+                document.getElementById("calenderresult").innerHTML="28일 입니다.";
+            }
             break;
             case 4:
             case 6:
@@ -60,31 +64,7 @@ function calender(A,B){
             break;
 
         }
-    }
-    else{
-       switch(B){
-            case 1:
-            case 3:
-            case 5:
-            case 7:
-            case 8:
-            case 10:
-            document.getElementById("calenderresult").innerHTML="31일 입니다.";
-            break;
-            case 2:
-            document.getElementById("calenderresult").innerHTML="28일 입니다.";
-            break;
-            case 4:
-            case 6:
-            case 9:
-            case 11:
-            document.getElementById("calenderresult").innerHTML="30일 입니다.";
-            break;
-            default:
-            document.getElementById("calenderresult").innerHTML="현재 입력된 값이 1~12의 범위에 있지 않기 때문에 출력이 안됩니다.";
-            break;
-        }
-    }
+
 }
 
 </script>
