@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+/*
+switch(a(스위치로 사용할 변수명)){
+	case 1:
+	break;
+	case 2:
+	break;
+	case 3:
+	break;
+
+}
+
+-->if는 값 비교가 되지만 switch-case문은 값 비교가 되지 않는다.
+*/
+function ex(){
+var inputvalue=4;
+
+    switch(inputvalue){
+        case 1:
+        document.write("case 1: <br>");
+        document.write("1이 시작됨");
+        break;
+        case 2:
+        break;
+        case 3:
+        document.write("case 3: <br>");
+        document.write("3임");
+        default:
+        document.write("잘못된 inputvalue");
+}
+}
+</script>
+
+</head>
+<body onload="ex()">
+</body>
+</html>

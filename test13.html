@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+/*
+switch(a(스위치로 사용할 변수명)){
+	case 1:
+	break;
+	case 2:
+	break;
+	case 3:
+	break;
+
+}
+
+-->if는 값 비교가 되지만 switch-case문은 값 비교가 되지 않는다.
+예외처리 = default(기본값)
+문제 : "월"을 입력받아 일수를 찍어라
+*/
+function Ainput(){
+    input = document.getElementById("A").value;
+    A = input;
+}
+function Binput(){
+    input = document.getElementById("B").value;
+    B = input;
+}
+function calender(A,B){
+
+    A/=1;
+    B/=1;
+    var day=0;
+    document.getElementById("year").innerHTML=A+"년"+B+"월의 일수는"
+
+    if (A%4==0){
+        switch(B){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            document.getElementById("calenderresult").innerHTML="31일 입니다.";
+            break;
+            case 2:
+            document.getElementById("calenderresult").innerHTML="29일 입니다.";
+            break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+            document.getElementById("calenderresult").innerHTML="30일 입니다.";
+            break;
+            default:
+            document.getElementById("calenderresult").innerHTML="현재 입력된 값이 1~12의 범위에 있지 않기 때문에 출력이 안됩니다.";
+            break;
+
+        }
+    }
+    else{
+       switch(B){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            document.getElementById("calenderresult").innerHTML="31일 입니다.";
+            break;
+            case 2:
+            document.getElementById("calenderresult").innerHTML="28일 입니다.";
+            break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+            document.getElementById("calenderresult").innerHTML="30일 입니다.";
+            break;
+            default:
+            document.getElementById("calenderresult").innerHTML="현재 입력된 값이 1~12의 범위에 있지 않기 때문에 출력이 안됩니다.";
+            break;
+        }
+    }
+}
+
+</script>
+
+</head>
+<body>
+    <input type="text" id="A">
+    <button onclick="Ainput()">년 입력</button><br><br><br>
+
+    <input type="text" id="B">
+    <button onclick="Binput()">월 입력</button><br><br><br>
+
+
+    <button onclick="calender(A,B)">월에 따른 일수 출력</button><br><br><br>
+    <p id="year"></p>
+    <p id="calenderresult"></p>
+</body>
+</html>

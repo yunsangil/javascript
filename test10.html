@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+/*
+while(조건식){
+    반복하고자 하는 코드
+}
+반복문을 이용해서 본인의 이름을 5번 출력해라.
+break; -->중간에 빠져나오고자 할때
+countinue; --> 조건이 거짓임에도 계속 실행하고자 할때
+*/
+function solution(a,b) {
+    var sum = 0;
+    var answer = 0;
+    a/=1;
+    b/=1;
+    var i=0;
+    //a = 3, b = 5
+    //a = 1, b = 7 ->1,2,3,4,5,6,7
+    if(a>b){
+        i=b; //5 3 i=3
+        b=a; //5 3 b=5
+        a=i; //5 3 a=3
+        }
+        for(i=a;i<=b;i++){
+            answer+=i;
+        }
+        document.getElementById("answer").innerHTML=A+","+B+"두 정수 사이의 합은 "+answer+"입니다."
+
+}
+
+function Ainput(){
+    input = document.getElementById("A").value;
+    A = input;
+}
+function Binput(){
+    input = document.getElementById("B").value;
+    B = input;
+}
+
+</script>
+
+</head>
+<body>
+
+        <input type="text" id="A">
+        <button onclick="Ainput()">숫자 1 입력</button><br><br><br>
+
+        <input type="text" id="B">
+        <button onclick="Binput()">숫자 2 입력</button><br><br><br>
+
+
+<button onclick="solution(A,B)">범위 합</button>
+<p id="answer"></p>
+
+</body>
+</html>
