@@ -35,6 +35,12 @@ BMI = Ç¥ÁØÃ¼Áß,ÀúÃ¼Áß,°úÃ¼ÁßÀ» ÆÇº°ÇÏ´Â ¼öÄ¡·Î ¸ö¹«°Ô¸¦ Å°ÀÇ Á¦°öÀ¸·Î ³ª´©¾î ±¸Ç
 -->3½Ã°£ 45ºĞ 35ÃÊ
 */
 function BMI(kg,cm){
+    if(kg<0||cm<0)
+    {
+        document.getElementById("Errorcheck").innerHTML="¿Í¿ì! À½¼ö¸¦ ÀÔ·ÂÇÏ¼Ì³×¿ä!";
+        document.getElementById("BMIcheck").innerHTML="";
+    }
+    else if(kg>0&&cm>0){
     if (cm>100&&cm<200){
         cm/=100;
 
@@ -50,6 +56,13 @@ function BMI(kg,cm){
     }
     else{
         document.getElementById("BMIcheck").innerHTML="´ç½ÅÀÇ BMI ¼öÄ¡´Â "+BMI+" Ã¼Áß °ü¸®°¡ ÇÊ¿äÇÕ´Ï´Ù.";
+    }
+    }
+    else
+    {
+        document.getElementById("Errorcheck").innerHTML="¿Í¿ì! ¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¼Ì³×¿ä!";
+
+        document.getElementById("BMIcheck").innerHTML="";
     }
 }
 function Ainput(){
@@ -78,7 +91,20 @@ function Casher(C,D,E,F)
     var change_100won=parseInt((((change%10000)%5000)%1000)%500)/100;
     var change_50won=parseInt(((((change%10000)%5000)%1000)%500)%100)/50;
     var change_10won=parseInt((((((change%10000)%5000)%1000)%500)%100)%50)/10;
-    document.getElementById("Casherresult").innerHTML="³½ µ·Àº"+C+"ÀÌ¸ç, <br>"+"Ä¡·¯¾ß ÇÒ °ªÀº"+price+"ÀÌ¸ç, <br>"+"°Å½º¸§ µ·Àº :"+change+"ÀÌ°í, <br>"+"10000¿øÂ¥¸® "+change_10000won+"°³,<br>"+"5000¿øÂ¥¸® "+change_5000won+"°³,<br>"+"1000¿øÂ¥¸® "+change_1000won+"°³,<br>"+"500¿øÂ¥¸® "+change_500won+"°³,<br>"+"100¿øÂ¥¸® "+change_100won+"°³,<br>"+"50¿øÂ¥¸® "+change_50won+"°³,<br>"+"10¿øÂ¥¸® "+change_10won+"°³,<br>"+"¸¦ °Å½½·¯ ÁÖ½Ã¸é µË´Ï´Ù."
+    if(C%10!=0&&D%10!=0&&E%10!=0&&F%10!=0)
+    {
+        document.getElementById("Casherresult").innerHTML="1¿ø ´ÜÀ§·Î ±İ¾×ÀÌ ÀÔ·ÂµÇ¸é ½ÇÇàµÇÁö ¾Ê½À´Ï´Ù."
+    }
+
+    else if(change>0){
+    document.getElementById("Casherresult").innerHTML="³½ µ·Àº"+C+"ÀÌ¸ç, <br>"+"Ä¡·¯¾ß ÇÒ °ªÀº"+price+"ÀÌ¸ç, <br>"+"°Å½º¸§ µ·Àº :"+change+"ÀÌ°í, <br>"+"10000¿øÂ¥¸® "+change_10000won+"°³,<br>"+"5000¿øÂ¥¸® "+change_5000won+"°³,<br>"+"1000¿øÂ¥¸® "+change_1000won+"°³,<br>"+"500¿øÂ¥¸® "+change_500won+"°³,<br>"+"100¿øÂ¥¸® "+change_100won+"°³,<br>"+"50¿øÂ¥¸® "+change_50won+"°³,<br>"+"10¿øÂ¥¸® "+change_10won+"°³,<br>"+"¸¦ °Å½½·¯ ÁÖ½Ã¸é µË´Ï´Ù.";
+    }
+    else if(change<0){
+        document.getElementById("Casherresult").innerHTML="°¡Áö°í ÀÖ´Â µ· º¸´Ù ¹°°Ç °ªÀÌ ºñ½Ô´Ï´Ù";
+    }
+    else{
+        document.getElementById("Casherresult").innerHTML="¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.";
+    }
 
 
 }
@@ -106,7 +132,16 @@ function traveltime(G,H){
     var traveltime_minute_default=(traveltime_default-traveltime_hour)*60
     var traveltime_minute =parseInt(traveltime_minute_default);
     var traveltime_second =Math.round(((traveltime_minute_default-traveltime_minute)*60) *1000)/1000.0;
+    if (G>0&&H>0){
     document.getElementById("traveltime").innerHTML="ÀÔ·Â °Å¸®´Â :"+G+"<br>"+"ÀÔ·ÂÇÏ½Å ¼Ó·ÂÀº :"+H+"<br>"+"¼Ò¿ä ½Ã°£Àº <br>"+traveltime_hour+"½Ã°£"+traveltime_minute+"ºĞ"+traveltime_second+"ÃÊ ÀÔ´Ï´Ù."
+    }
+    else if(G<0||H<0){
+        document.getElementById("traveltime").innerHTML="À½¼ö¸¦ ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.";
+
+    }
+    else{
+        document.getElementById("traveltime").innerHTML="¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.";
+    }
 }
 function Ginput(){
     input = document.getElementById("G").value;
@@ -151,7 +186,15 @@ function checktime(J){
     var minutes_default=(J-hours)*60
     var minutes=parseInt(minutes_default);
     var seconds=parseInt((minutes_default-minutes)*60)
+    if(J>0){
     document.getElementById("checktime").innerHTML=J+"½Ã°£À¸·Î ÀÔ·ÂÇßÀ»¶§ »êÃâ µÇ´Â ½Ã,ºĞ,ÃÊÀÇ °ªÀº <br>"+hours+"½Ã°£"+minutes+"ºĞ"+seconds+"ÃÊ ÀÔ´Ï´Ù."
+    }
+    else if(J<0){
+        document.getElementById("checktime").innerHTML="À½¼ö¸¦ ÀÔ·ÂÇÏ¼Ì³×¿ä !";
+    }
+    else{
+        document.getElementById("checktime").innerHTML="¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¼Ì³×¿ä !";
+    }
 
 }
 
@@ -163,7 +206,7 @@ function Jinput(){
 
 </head>
 <body>
-<p>1¹ø ¹®Á¦</p>
+<p>1¹ø ¹®Á¦ Ã¼Áß°ü¸® ÇÁ·Î±×·¥</p>
 <input type="text" id="A">
 <button onclick="Ainput()">Å° ÀÔ·Â</button><br><br><br>
 
@@ -176,7 +219,7 @@ function Jinput(){
 
 <p id="BMIcheck"></p>
 
-<p>2¹ø ¹®Á¦</p>
+<p>2¹ø ¹®Á¦ Ä³¼Å ÇÁ·Î±×·¥</p>
 <input type="text" id="C">
 <button onclick="Cinput()">³¾ µ· ÀÔ·Â</button><br><br><br>
 
@@ -194,7 +237,7 @@ function Jinput(){
 
 <p id="Casherresult"></p>
 
-<p>3¹ø ¹®Á¦</p>
+<p>3¹ø ¹®Á¦ ÀÚµ¿Â÷ ÁÖÇà½Ã°£ ÃøÁ¤ ÇÁ·Î±×·¥</p>
 
 
 <input type="text" id="G">
@@ -207,7 +250,7 @@ function Jinput(){
 <button onclick="traveltime(G,H)">½Ã°£=°Å¸®/¼Ó·Â. È®ÀÎ?</button>
 <p id="traveltime"></p>
 
-<p>4¹ø ¹®Á¦</p>
+<p>4¹ø ¹®Á¦ ÀÔÀå·ü Ã¼Å© ÇÁ·Î±×·¥</p>
 <p>ÁÂ¼® ¼ö´Â 70À¸·Î °íÁ¤µÇÀÖ´Ù.</p>
 <input type="text" id="I">
 <button onclick="Iinput()">ÀÔÀå°´¼ö ÀÔ·Â</button><br><br><br>
@@ -215,7 +258,7 @@ function Jinput(){
 <button onclick="checkpercent(I)">ÀÔÀå·ü È®ÀÎ</button>
 <p id="checkresult"></p>
 
-<p>5¹ø ¹®Á¦</p>
+<p>5¹ø ¹®Á¦ ½Ã°£ ¼Ò¼ıÁ¡ ´ÜÀ§ º¯È¯ ÇÁ·Î±×·¥</p>
 
 <input type="text" id="J"">
 <button onclick="Jinput()">½Ã°£ ÀÔ·Â x.xx½Ã°£Àº?</button><br><br><br>
