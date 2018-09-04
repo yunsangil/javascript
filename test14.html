@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+/*
+0점부터 100점까지 입력받아서 switch case 로 처리.
+100~90 a
+80~89 b
+70~79 c
+나머진 f
+*/
+function Ainput(){
+    input = document.getElementById("A").value;
+    A = input;
+}
+function gradecheck(point){
+
+    point_for_switch = parseInt(point/10);
+
+    switch(point_for_switch)
+    {
+        case 10:
+        case 9:
+        document.getElementById("grade").innerHTML="A 학점입니다.";
+        break;
+        case 8:
+        document.getElementById("grade").innerHTML="B 학점입니다.";
+        break;
+        case 7:
+        document.getElementById("grade").innerHTML="C 학점입니다.";
+        break;
+        default:
+        document.getElementById("grade").innerHTML="F 학점입니다.";
+        break;
+
+    }
+}
+
+</script>
+
+</head>
+<body>
+    <input type="text" id="A">
+    <button onclick="Ainput()">점수 입력</button><br><br><br>
+
+    <button onclick="gradecheck(A)">학점 출력</button><br><br><br>
+    <p id="grade"></p>
+</body>
+</html>
