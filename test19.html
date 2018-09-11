@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+// //구구단 출력
+// var str="<table border=1>";
+// str+="<tr>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="</tr>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="<td>1</td>";
+// str+="</table>";
+
+// document.write(str)
+function gugudan(){
+    var x=0,y=0;
+    var gugu=new Array();
+    for(x=2;x<=9;x++)
+    {
+        for(y=1;y<=9;y++)
+        {
+           gugu[y]=x*y;
+
+           if (x==2){
+           switch(y)
+        {
+            case 1:
+            document.getElementById("one").innerHTML=x+"X"+y+"="+gugu[1];
+            break;
+            case 2:
+            document.getElementById("two").innerHTML=x+"X"+y+"="+gugu[2];
+            break;
+            case 3:
+            document.getElementById("three").innerHTML=x+"X"+y+"="+gugu[3];
+            break;
+            case 4:
+            document.getElementById("four").innerHTML=x+"X"+y+"="+gugu[4];
+            break;
+            case 5:
+            document.getElementById("five").innerHTML=x+"X"+y+"="+gugu[5];
+            break;
+            case 6:
+            document.getElementById("six").innerHTML=x+"X"+y+"="+gugu[6];
+            break;
+            case 7:
+            document.getElementById("seven").innerHTML=x+"X"+y+"="+gugu[7];
+            break;
+            case 8:
+            document.getElementById("eight").innerHTML=x+"X"+y+"="+gugu[8];
+            break;
+            case 9:
+            document.getElementById("nine").innerHTML=x+"X"+y+"="+gugu[9];
+            break;
+
+        }
+        }
+        else if(x==3){
+            switch(y)
+        {
+            case 1:
+            document.getElementById("one3").innerHTML=x+"X"+y+"="+gugu[1];
+            break;
+            case 2:
+            document.getElementById("two3").innerHTML=x+"X"+y+"="+gugu[2];
+            break;
+            case 3:
+            document.getElementById("three3").innerHTML=x+"X"+y+"="+gugu[3];
+            break;
+            case 4:
+            document.getElementById("four3").innerHTML=x+"X"+y+"="+gugu[4];
+            break;
+            case 5:
+            document.getElementById("five3").innerHTML=x+"X"+y+"="+gugu[5];
+            break;
+            case 6:
+            document.getElementById("six3").innerHTML=x+"X"+y+"="+gugu[6];
+            break;
+            case 7:
+            document.getElementById("seven3").innerHTML=x+"X"+y+"="+gugu[7];
+            break;
+            case 8:
+            document.getElementById("eight3").innerHTML=x+"X"+y+"="+gugu[8];
+            break;
+            case 9:
+            document.getElementById("nine3").innerHTML=x+"X"+y+"="+gugu[9];
+            break;
+
+        }
+        }
+        else if(x==4){
+            switch(y)
+        {
+            case 1:
+            document.getElementById("one4").innerHTML=x+"X"+y+"="+gugu[1];
+            break;
+            case 2:
+            document.getElementById("two4").innerHTML=x+"X"+y+"="+gugu[2];
+            break;
+            case 3:
+            document.getElementById("three4").innerHTML=x+"X"+y+"="+gugu[3];
+            break;
+            case 4:
+            document.getElementById("four4").innerHTML=x+"X"+y+"="+gugu[4];
+            break;
+            case 5:
+            document.getElementById("five4").innerHTML=x+"X"+y+"="+gugu[5];
+            break;
+            case 6:
+            document.getElementById("six4").innerHTML=x+"X"+y+"="+gugu[6];
+            break;
+            case 7:
+            document.getElementById("seven4").innerHTML=x+"X"+y+"="+gugu[7];
+            break;
+            case 8:
+            document.getElementById("eight4").innerHTML=x+"X"+y+"="+gugu[8];
+            break;
+            case 9:
+            document.getElementById("nine4").innerHTML=x+"X"+y+"="+gugu[9];
+            break;
+
+        }
+        }
+        else if(x==5){
+            switch(y)
+        {
+            case 1:
+            document.getElementById("one5").innerHTML=x+"X"+y+"="+gugu[1];
+            break;
+            case 2:
+            document.getElementById("two5").innerHTML=x+"X"+y+"="+gugu[2];
+            break;
+            case 3:
+            document.getElementById("three5").innerHTML=x+"X"+y+"="+gugu[3];
+            break;
+            case 4:
+            document.getElementById("four5").innerHTML=x+"X"+y+"="+gugu[4];
+            break;
+            case 5:
+            document.getElementById("five5").innerHTML=x+"X"+y+"="+gugu[5];
+            break;
+            case 6:
+            document.getElementById("six5").innerHTML=x+"X"+y+"="+gugu[6];
+            break;
+            case 7:
+            document.getElementById("seven5").innerHTML=x+"X"+y+"="+gugu[7];
+            break;
+            case 8:
+            document.getElementById("eight5").innerHTML=x+"X"+y+"="+gugu[8];
+            break;
+            case 9:
+            document.getElementById("nine5").innerHTML=x+"X"+y+"="+gugu[9];
+            break;
+
+        }
+        }
+        else if(x==6){
+            switch(y)
+        {
+            case 1:
+            document.getElementById("one6").innerHTML=x+"X"+y+"="+gugu[1];
+            break;
+            case 2:
+            document.getElementById("two6").innerHTML=x+"X"+y+"="+gugu[2];
+            break;
+            case 3:
+            document.getElementById("three6").innerHTML=x+"X"+y+"="+gugu[3];
+            break;
+            case 4:
+            document.getElementById("four6").innerHTML=x+"X"+y+"="+gugu[4];
+            break;
+            case 5:
+            document.getElementById("five6").innerHTML=x+"X"+y+"="+gugu[5];
+            break;
+            case 6:
+            document.getElementById("six6").innerHTML=x+"X"+y+"="+gugu[6];
+            break;
+            case 7:
+            document.getElementById("seven6").innerHTML=x+"X"+y+"="+gugu[7];
+            break;
+            case 8:
+            document.getElementById("eight6").innerHTML=x+"X"+y+"="+gugu[8];
+            break;
+            case 9:
+            document.getElementById("nine6").innerHTML=x+"X"+y+"="+gugu[9];
+            break;
+
+        }
+        }
+        else if(x==7){
+            switch(y)
+        {
+            case 1:
+            document.getElementById("one7").innerHTML=x+"X"+y+"="+gugu[1];
+            break;
+            case 2:
+            document.getElementById("two7").innerHTML=x+"X"+y+"="+gugu[2];
+            break;
+            case 3:
+            document.getElementById("three7").innerHTML=x+"X"+y+"="+gugu[3];
+            break;
+            case 4:
+            document.getElementById("four7").innerHTML=x+"X"+y+"="+gugu[4];
+            break;
+            case 5:
+            document.getElementById("five7").innerHTML=x+"X"+y+"="+gugu[5];
+            break;
+            case 6:
+            document.getElementById("six7").innerHTML=x+"X"+y+"="+gugu[6];
+            break;
+            case 7:
+            document.getElementById("seven7").innerHTML=x+"X"+y+"="+gugu[7];
+            break;
+            case 8:
+            document.getElementById("eight7").innerHTML=x+"X"+y+"="+gugu[8];
+            break;
+            case 9:
+            document.getElementById("nine7").innerHTML=x+"X"+y+"="+gugu[9];
+            break;
+
+        }
+        }
+        else if(x==8){
+            switch(y)
+        {
+            case 1:
+            document.getElementById("one8").innerHTML=x+"X"+y+"="+gugu[1];
+            break;
+            case 2:
+            document.getElementById("two8").innerHTML=x+"X"+y+"="+gugu[2];
+            break;
+            case 3:
+            document.getElementById("three8").innerHTML=x+"X"+y+"="+gugu[3];
+            break;
+            case 4:
+            document.getElementById("four8").innerHTML=x+"X"+y+"="+gugu[4];
+            break;
+            case 5:
+            document.getElementById("five8").innerHTML=x+"X"+y+"="+gugu[5];
+            break;
+            case 6:
+            document.getElementById("six8").innerHTML=x+"X"+y+"="+gugu[6];
+            break;
+            case 7:
+            document.getElementById("seven8").innerHTML=x+"X"+y+"="+gugu[7];
+            break;
+            case 8:
+            document.getElementById("eight8").innerHTML=x+"X"+y+"="+gugu[8];
+            break;
+            case 9:
+            document.getElementById("nine8").innerHTML=x+"X"+y+"="+gugu[9];
+            break;
+
+        }
+        }
+        else if(x==9){
+            switch(y)
+        {
+            case 1:
+            document.getElementById("one9").innerHTML=x+"X"+y+"="+gugu[1];
+            break;
+            case 2:
+            document.getElementById("two9").innerHTML=x+"X"+y+"="+gugu[2];
+            break;
+            case 3:
+            document.getElementById("three9").innerHTML=x+"X"+y+"="+gugu[3];
+            break;
+            case 4:
+            document.getElementById("four9").innerHTML=x+"X"+y+"="+gugu[4];
+            break;
+            case 5:
+            document.getElementById("five9").innerHTML=x+"X"+y+"="+gugu[5];
+            break;
+            case 6:
+            document.getElementById("six9").innerHTML=x+"X"+y+"="+gugu[6];
+            break;
+            case 7:
+            document.getElementById("seven9").innerHTML=x+"X"+y+"="+gugu[7];
+            break;
+            case 8:
+            document.getElementById("eight9").innerHTML=x+"X"+y+"="+gugu[8];
+            break;
+            case 9:
+            document.getElementById("nine9").innerHTML=x+"X"+y+"="+gugu[9];
+            break;
+
+        }
+        }
+        }
+    }
+}
+</script>
+<style>
+            table{
+            border-width: 2px;
+            width: 90%;
+        }
+        tr{
+            background-color:gray;
+        }
+        th{
+            border-bottom-width: 2px;
+            height: 25px;
+            text-align: center;
+            background-color: white;
+        }
+        .dan{
+            text-align: center;
+        }
+        .print{
+            background-color: white;
+            height: 300px;
+        }
+</style>
+
+</head>
+<body onload="gugudan()">
+    <table border="10">
+        <tr>
+            <th colspan="8">구구단 출력</th>
+        </tr>
+        <tr class="dan">
+            <td>2단</td>
+            <td>3단</td>
+            <td>4단</td>
+            <td>5단</td>
+            <td>6단</td>
+            <td>7단</td>
+            <td>8단</td>
+            <td>9단</td>
+        </tr>
+        <tr class="print">
+            <td class="2dan">
+                <p id="one"></p>
+                <p id="two"></p>
+                <p id="three"></p>
+                <p id="four"></p>
+                <p id="five"></p>
+                <p id="six"></p>
+                <p id="seven"></p>
+                <p id="eight"></p>
+                <p id="nine"></p>
+            </td>
+            <td class="3dan">
+
+                    <p id="one3"></p>
+                    <p id="two3"></p>
+                    <p id="three3"></p>
+                    <p id="four3"></p>
+                    <p id="five3"></p>
+                    <p id="six3"></p>
+                    <p id="seven3"></p>
+                    <p id="eight3"></p>
+                    <p id="nine3"></p>
+            </td>
+            <td class="4dan">
+
+
+                    <p id="one4"></p>
+                    <p id="two4"></p>
+                    <p id="three4"></p>
+                    <p id="four4"></p>
+                    <p id="five4"></p>
+                    <p id="six4"></p>
+                    <p id="seven4"></p>
+                    <p id="eight4"></p>
+                    <p id="nine4"></p>
+            </td>
+            <td class="5dan">
+
+
+                    <p id="one5"></p>
+                    <p id="two5"></p>
+                    <p id="three5"></p>
+                    <p id="four5"></p>
+                    <p id="five5"></p>
+                    <p id="six5"></p>
+                    <p id="seven5"></p>
+                    <p id="eight5"></p>
+                    <p id="nine5"></p>
+            </td>
+            <td class="6dan">
+
+
+                    <p id="one6"></p>
+                    <p id="two6"></p>
+                    <p id="three6"></p>
+                    <p id="four6"></p>
+                    <p id="five6"></p>
+                    <p id="six6"></p>
+                    <p id="seven6"></p>
+                    <p id="eight6"></p>
+                    <p id="nine6"></p>
+            </td>
+            <td class="7dan">
+
+
+                    <p id="one7"></p>
+                    <p id="two7"></p>
+                    <p id="three7"></p>
+                    <p id="four7"></p>
+                    <p id="five7"></p>
+                    <p id="six7"></p>
+                    <p id="seven7"></p>
+                    <p id="eight7"></p>
+                    <p id="nine7"></p>
+            </td>
+            <td class="8dan">
+
+
+                    <p id="one8"></p>
+                    <p id="two8"></p>
+                    <p id="three8"></p>
+                    <p id="four8"></p>
+                    <p id="five8"></p>
+                    <p id="six8"></p>
+                    <p id="seven8"></p>
+                    <p id="eight8"></p>
+                    <p id="nine8"></p>
+            </td>
+            <td class="9dan">
+
+
+                    <p id="one9"></p>
+                    <p id="two9"></p>
+                    <p id="three9"></p>
+                    <p id="four9"></p>
+                    <p id="five9"></p>
+                    <p id="six9"></p>
+                    <p id="seven9"></p>
+                    <p id="eight9"></p>
+                    <p id="nine9"></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

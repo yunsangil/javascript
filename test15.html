@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+/*
+비트 연산자
+30>20&&&20>10{
+    true
+}
+else{
+    false
+}
+1.특정 수를 입력받아 2나 5의 배수이면 출력
+2.2의 배수도 되고 5의 배수도 되면 출력
+*/
+function Ainput(){
+    input = document.getElementById("A").value;
+    A = input;
+}
+function numbercheck(number){
+    if(number%2==0||number%5==0){
+        if(number%2==0&&number%5==0){
+            document.getElementById("number").innerHTML=number+" 는 2의 배수이면서 5의 배수입니다.";
+        }
+        else if(number%2==0)
+        {
+            document.getElementById("number").innerHTML=number+" 는 2의 배수입니다.";
+
+        }
+        else if(number%5==0){
+            document.getElementById("number").innerHTML=number+" 는 5의 배수입니다.";
+        }
+
+
+    }
+    else if(number>0||number<0){
+        document.getElementById("number").innerHTML="2의 배수나 5의 배수가 아닌 숫자를 입력하셨습니다.";
+    }
+    else{
+        document.getElementById("number").innerHTML="문자를 입력하셨습니다."
+    }
+}
+
+</script>
+
+</head>
+<body>
+    <input type="text" id="A">
+    <button onclick="Ainput()">숫자 입력</button><br><br><br>
+
+    <button onclick="numbercheck(A)">2나 5의 배수 체크</button><br><br><br>
+    <p id="number"></p>
+</body>
+</html>

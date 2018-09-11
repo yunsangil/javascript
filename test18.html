@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+
+
+function Ainput(){
+    input = document.getElementById("A").value;
+    A = input;
+}
+
+function Binput(){
+    input = document.getElementById("B").value;
+    B = input;
+}
+function Cinput(){
+    input = document.getElementById("C").value;
+    C = input;
+}
+
+function Dinput(){
+    input = document.getElementById("D").value;
+    D = input;
+}
+
+function Einput(){
+    input = document.getElementById("E").value;
+    E = input;
+}
+function Finput(){
+    input = document.getElementById("F").value;
+    F = input;
+}
+function Ginput(){
+    input = document.getElementById("G").value;
+    G = input;
+}
+function Hinput(){
+    input = document.getElementById("H").value;
+    H = input;
+}
+function Iinput(){
+    input = document.getElementById("I").value;
+    I = input;
+}
+function Jinput(){
+    input = document.getElementById("J").value;
+    J = input;
+}
+
+function Kinput(){
+    input = document.getElementById("K").value;
+    K = input;
+}
+function Linput(){
+    input = document.getElementById("L").value;
+    L = input;
+}
+function Minput(){
+    input = document.getElementById("M").value;
+    M = input;
+}
+function calcinputplus(){
+    calc="+";
+}
+function calcinputminus(){
+    calc="-";
+}
+function calcinputmultiple(){
+    calc="*";
+}
+function calcinputdivine(){
+    calc="/";
+}
+function signalinputred(){
+    signal="red";
+}
+function signalinputyellow(){
+    signal="yellow";
+}
+function signalinputgreen(){
+    signal="green";
+}
+
+
+function iftest(A,B){
+    if (A>=10)
+    {
+        document.getElementById("ifresult").innerHTML=A;
+    }
+    else{
+        if (B!=0){
+            document.getElementById("ifresult").innerHTML=A/B;
+        }
+        else{
+        document.getElementById("ifresult").innerHTML=A;
+
+
+        }
+
+    }
+}
+function casetest(C){
+    C/=1;
+    var result;
+
+    switch(C){
+        case 3:
+        result=1;
+        break;
+        case 5:
+        result=2;
+        break;
+        case 7:
+        result=3;
+        break;
+        default:
+        result=0;
+        break;
+
+    }
+    document.getElementById("caseresult").innerHTML=result;
+}
+function checksize(age,chestsize){
+    age/=1;
+    chestsize/=1;
+    var size=" ";
+    if (age<20){
+        if(chestsize<85){
+            size="S";
+        }
+        else if(chestsize>=85&&chestsize<95){
+            size="M";
+        }
+        else if(chestsize>=95){
+            size="L";
+        }
+        else{
+            size="문자를 입력하셨다.";
+        }
+    document.getElementById("checksizeresult").innerHTML="사이즈는 " +size+"입니다";
+    }
+    else if(age>=20){
+        if(chestsize<90){
+            size="S";
+        }
+        else if(chestsize>=90&&chestsize<100)
+        {
+            size="M";
+        }
+        else if(chestsize>=100)
+        {
+            size="L";
+        }
+        else{
+            size="문자를 입력하셨다.";
+        }
+    document.getElementById("checksizeresult").innerHTML="사이즈는 " +size+"입니다";
+    }
+    else{
+        document.getElementById("checksizeresult").innerHTML="나이에 문자를 입력하셨습니다.";
+    }
+}
+function calctex(money){
+    money/=1;
+    var tax=0;
+    if(money<=1000)
+    {
+        tax=money*0.08+"만원";
+    }
+    else if(money>1000&&money<=4000)
+    {
+        money-=1000;
+        tax=0.08*1000+money*0.17+"만원";
+    }
+    else if(money>4000&&money<=8000)
+    {
+        money-=4000;
+        tax=0.08*1000+0.17*3000+money*0.26+"만원";
+    }
+    else if(money>8000)
+    {
+        money-=8000;
+        tax=0.08*1000+0.17*3000+0.26*4000+money*0.35+"만원";
+    }
+    else
+    {
+        tax="문자를 입력해서 측정 불가";
+    }
+    document.getElementById("taxresult").innerHTML="소득세는 "+tax+"입니다";
+}
+function gradecheck(middlescore,endscore)
+{
+    middlescore/=1;
+    endscore/=1;
+
+    var avgpoint=(middlescore+endscore)/2;
+    var grade=" ";
+
+    if(avgpoint>=90)
+    {
+        grade="A학점";
+    }
+    else if(avgpoint>=80)
+    {
+        grade="B학점";
+    }
+    else if(avgpoint>=70)
+    {
+        grade="C학점";
+    }
+    else if(avgpoint>=60)
+    {
+        grade="D학점";
+    }
+    else if(avgpoint<60)
+    {
+        grade="F학점";
+    }
+    else
+    {
+        grade="문자 입력하지 마세요";
+    }
+    document.getElementById("graderesult").innerHTML="당신의 학점은 "+grade+"입니다"
+}
+function calcprogram(num1,calc,num2)
+{
+    num1/=1;
+    num2/=1;
+    var result=0;
+    if(num1>0||num2>0||num1<0||num2<0)
+    {
+    if(calc=="+")
+    {
+        result=num1+num2;
+        document.getElementById("calcresult").innerHTML="실행 결과 :"+num1+"+"+num2+"="+result;
+    }
+    else if(calc=="-")
+    {
+        result=num1-num2;
+        document.getElementById("calcresult").innerHTML="실행 결과 :"+num1+"-"+num2+"="+result;
+    }
+    else if(calc=="*")
+    {
+       result= num1*num2;
+        document.getElementById("calcresult").innerHTML="실행 결과 :"+num1+"*"+num2+"="+result;
+    }
+    else if(calc=="/")
+    {
+        result=num1/num2;
+        document.getElementById("calcresult").innerHTML="실행 결과 :"+num1+"/"+num2+"="+result;
+    }
+    }
+    else{
+        document.getElementById("calcresult").innerHTML="문자를 입력하셨습니다.";
+    }
+
+}
+function scholarship(rich,grade)
+{
+    rich/=1;
+    grade/=1;
+    var tuition=100;
+    var scholar=0;
+    if(rich>=100&&grade>=4.0&&grade<=4.5)
+    {
+        scholar=tuition*0.2;
+        tuition=tuition-scholar+"만원";
+    }
+    else if(rich<100&&grade<=4.5)
+    {
+        scholar=tuition*0.4;
+        tuition=tuition-scholar+"만원";
+    }
+    else if(rich>100&&grade<=4.5)
+    {
+        tuition=tuition+"만원";
+    }
+
+    else
+    {
+        tuition="잘못 된 값을 입력하셨다";
+    }
+    document.getElementById("scholarresult").innerHTML="다음 학기 납입할 등록금은 "+tuition+"입니다";
+}
+function signallight(signal)
+{
+    var signallightprint=" ";
+
+    if(signal=="red")
+    {
+        signallightprint="정지";
+    }
+    else if(signal=="yellow")
+    {
+        signallightprint="주의";
+    }
+    else if(signal=="green")
+    {
+        signallightprint="진행";
+    }
+    document.getElementById("signalresult").innerHTML=signallightprint;
+}
+function electriccharge(amount)
+{
+    amount/=1;
+    var basicrate=0;
+    var charge=0;
+    var tax=0;
+    var finalcharge=0;
+
+    if(amount<=100&&amount>=1)
+    {
+        basicrate=370;
+        charge=amount*52.00;
+    }
+    else if(amount<=200&&amount>=101)
+    {
+        basicrate=660;
+        charge=amount*88.50;
+    }
+    else if(amount<=300&&amount>=201)
+    {
+        basicrate=1130;
+        charge=amount*127.80;
+    }
+    else if(amount<=400&&amount>=301)
+    {
+        basicrate=2710;
+        charge=amount*184.30;
+    }
+    else if(amount<=500&&amount>=401)
+    {
+        basicrate=5130;
+        charge=amount*274.30;
+    }
+    else if(amount>500)
+    {
+        basicrate=9930;
+        charge=amount*494.00;
+    }
+    tax=(basicrate+charge)*0.09;
+    finalcharge=parseInt(basicrate+charge+tax);
+    document.getElementById("chargeresult").innerHTML="이번 달 요금은 " +finalcharge+"원 입니다.";
+
+}
+</script>
+
+</head>
+<body>
+    <p>01.if문 테스트</p>
+    <p>a가 10보다 크거나 같으면 그대로 반환, 아닐 시 B가 0이 아닐 경우 A/B, B가 0이면 그대로 A를 리턴</p>
+    <input type="text" id="A">
+    <button onclick="Ainput()">A값 입력</button><br><br><br>
+
+    <input type="text" id="B">
+    <button onclick="Binput()">B값 입력</button><br><br><br>
+
+    <button onclick="iftest(A,B)">결과 확인</button>
+
+    <p id="ifresult"></p>
+
+    <p>02. case문 테스트</p>
+    <p>3,5,7일떄 각각 1,2,3</p>
+    <input type="text" id="C">
+    <button onclick="Cinput()">값 입력</button><br><br><br>
+
+    <button onclick="casetest(C)">결과 확인</button>
+
+    <p id="caseresult"></p>
+
+    <p>03. 옷 사이즈 </p>
+    <p>나이에 따른 옷 사이즈가 틀리다.</p>
+    <p>20세 미만, 85미만 S, 85이상 95미만 M, 95이상 L</p>
+    <p>20세 이상, 90미만 S, 90이상 100미만 M, 100이상 L</p>
+
+    <input type="text" id="D">
+    <button onclick="Dinput()">나이 입력</button><br><br><br>
+
+    <input type="text" id="E">
+    <button onclick="Einput()">가슴둘레 입력</button><br><br><br>
+
+    <button onclick="checksize(D,E)">사이즈 계산</button>
+
+    <p id="checksizeresult"></p>
+
+    <p>04.과세표준 계산</p>
+    <p>1000만 원 이하 세율 8%</p>
+    <p>1000만 원 초과 4000만 원 이하 17%</p>
+    <p>4000만 원 초과 8000만 원 이하 26%</p>
+    <p>8000만 원 초과 35%</p>
+
+    <input type="text" id="F">
+    <button onclick="Finput()">과세표준 입력(만원)</button><br><br><br>
+
+    <button onclick="calctex(F)">소득세 계산</button>
+
+    <p id="taxresult"></p>
+
+    <p>05. 학점 계산</p>
+    <input type="text" id="G">
+    <button onclick="Ginput()">중간성적 입력</button><br><br><br>
+
+
+    <input type="text" id="H">
+    <button onclick="Hinput()">기말성적 입력</button><br><br><br>
+
+    <button onclick="gradecheck(G,H)">학점 출력</button>
+
+    <p id="graderesult"></p>
+
+    <p>06. 계산기 프로그램</p>
+
+    <input type="text" id="I">
+    <button onclick="Iinput()">숫자 1 입력</button><br><br><br>
+
+
+    <button onclick="calcinputplus()" id="plus">+</button>
+    <button onclick="calcinputminus()" id="minus">-</button>
+    <button onclick="calcinputmultiple()" id="multiple">*</button>
+    <button onclick="calcinputdivine()" id="divine">/</button><br><br>
+
+    <input type="text" id="J">
+    <button onclick="Jinput()">숫자 2 입력</button><br><br><br>
+
+    <button onclick="calcprogram(I,calc,J)">계산기 실행</button>
+
+    <p id="calcresult"></p>
+
+    <p>07. 장학금 계산 프로그램</p>
+    <p>가정 형편이 좋고 학점이 4.0 이상이면 등록금의 20%를 장학금으로 지급</p>
+    <p>가정 형편이 어려운 경우는 학점과 관계 없이 등록금의 40%를 장학금으로 지급한다.</p>
+    <p>등록금은 100만원이며, 가정형편이 100이상이면 좋은 것으로 판단한다.</p>
+    <p>학점의 맥스치는 4.5</p>
+
+    <input type="text" id="K">
+    <button onclick="Kinput()">가정형편(?) 입력</button><br><br><br>
+
+
+    <input type="text" id="L">
+    <button onclick="Linput()">학점 입력</button><br><br><br>
+
+    <button onclick="scholarship(K,L)">등록금-장학금 출력</button>
+
+    <p id="scholarresult"></p>
+
+    <p>08. 신호등 프로그램</p>
+    <p>빨간 불이면 정지, 노란불이면 주의, 초록불이면 진행</p>
+
+    <button onclick="signalinputred()">빨간불</button>
+    <button onclick="signalinputyellow()">노란불</button>
+    <button onclick="signalinputgreen()">초록불</button><br><br>
+
+    <button onclick="signallight(signal)">신호등 프로그램 실행</button>
+
+    <p id="signalresult"></p>
+
+    <p>09. 전기요금 계산 프로그램</p>
+
+    <input type="text" id="M">
+    <button onclick="Minput()">전기 사용량 입력(kw)</button><br><br><br>
+
+    <button onclick="electriccharge(M)">요금 계산</button>
+
+    <p id="chargeresult"></p>
+</body>
+</html>

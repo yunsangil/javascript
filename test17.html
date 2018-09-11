@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+/*
+//반복문 없이 5를 5번 더해보자.
+*/
+// 다음 악보가 연주되도록 출력하시오.
+// 1.쿵 쿵 쿵 쿵 쿵
+// 2.덕 덕 덕 덕 덕
+// 3.쿵 쿵 쿵 쿵 덕 덕 덕 덕
+// 4. 쿵 덕 쿵 덕 쿵 덕 쿵 덕
+// 5. 쿵 짝 짝 쿵 짝 짝 쿵 짝 짝 쿵 짝 짝
+// 6. 쿵 짝 짝 짝 덩 짝 짝 짝 쿵 짝 짝 짝 덩 짝 짝 짝 쿵 짝 짝 짝 덩 짝 짝 짝
+//    1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+function musicQ(){
+
+    var kung="쿵";
+    var duck="덕";
+    var jjak="짝";
+    var dung="덩";
+    var Q=0;
+    var Q2=0;
+
+    while(Q<5){
+        document.write(kung+" ");
+        Q++;
+    }
+    document.write("<br>");
+    Q=0;
+    while(Q<5){
+        document.write(duck+" ");
+        Q++;
+
+    }
+
+    document.write("<br>");
+
+    Q=0;
+    while(Q<4)
+    {
+        document.write(kung+" ");
+        Q++;
+    }
+    while (Q2<4)
+    {
+        document.write(duck+" ");
+        Q2++;
+    }
+    document.write("<br>");
+    Q=0;
+    while(Q<4)
+    {
+        document.write(kung+" ");
+        document.write(duck+" ");
+        Q++;
+    }
+
+    document.write("<br>");
+    Q=0;
+    while(Q<4){
+        document.write(kung+" ");
+        Q2=0;
+        while(Q2<2)
+        {
+            document.write(jjak+" ");
+            Q2++;
+        }
+        Q++;
+    }
+    Q=1;
+    Q2=0;
+    document.write("<br>");
+    //1 9 17 kung
+    //5 13 21 dung
+    //else jjak
+    //4 다음 마다 쿵or덩
+    //boolean kungdung?
+    while(Q<=24){
+        if (Q==1||Q==9||Q==17)
+        {
+            document.write(kung+" ");
+
+        }
+        else if(Q==5||Q==13||Q==21)
+        {
+            document.write(dung+" ");
+        }
+        else
+        {
+            document.write(jjak+" ");
+
+        }
+        Q++;
+
+    }
+    document.write("<br>");
+    document.write("다른 풀이 :<br>");
+    Q=1;
+    Q2=1;
+    var Q3=0;
+
+    while(Q<=6){
+        if (Q3==0)
+        {
+            document.write(kung+" ");
+            Q3=1;
+            }
+            else if (Q3==1)
+            {
+                document.write(dung+" ");
+                Q3=0;
+                }
+                Q2=1;
+                while(Q2<4){
+                    document.write(jjak+" ");
+                    Q2++;
+                    }
+                    Q++;
+    }
+}
+
+</script>
+
+</head>
+<body onload="musicQ()">
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="euc-kr" />
+<title>Page Title</title>
+</head>
+<script>
+/*
+//반복문 없이 5를 5번 더해보자.
+*/
+function Ainput(){
+    input = document.getElementById("A").value;
+    A = input;
+}
+// function sum(){
+// var sum=0;
+// // sum+=5;
+// // sum+=5;
+// // sum+=5;
+// // sum+=5;
+// // sum+=5;
+// var count=0;
+// while(count<5){
+//     sum=sum+5;
+//     count++;
+
+
+// }
+
+// document.write(sum,"<br>");
+// }
+//수학에 수열형태의 반복문들도 반복문으로 처리할 수 있다.
+//특정 형태의 반복형태를 가지고 있는 코드는 반복문으로 처리할 수 있다.
+
+// sum=sum+1//2
+// sum=sum+2;//4
+// sum=sum+3;//6
+// sum=sum+4;//8
+// sum=sum+5;//10
+//n이 반복 횟수라 하면 sum에 반복횟수를 더해준 것
+
+//4 7 10 13 16
+
+//while문 1번 실행할 때 마다 이름을 3번씩 출력
+function writename(){
+    var count2=0;
+
+    while(count2<5){
+        document.write(count2,"<br>밖에 while 문 시작<br><br>");
+
+    var count1=0;
+        while(count1<3){
+            document.write("yun<br>");
+            count1++;
+        }
+        count2++;
+        document.write("<br>밖에 while문 종료<br>");
+    }
+}
+
+
+function plusthree(){
+    var count=1;
+    var sum=0;
+    while(count<=5){
+        sum=1+(count*3);
+        document.write(sum+"<br>");
+        count++;
+    }
+}
+function sum(){
+    var sum=0;
+    var count=1;
+    while(count<=5){
+        sum+=count;
+        count++;
+        }
+        document.write(sum+"<br>");
+}
+function sum2n(){
+    var sum=0;
+    var count=1;
+    while(count<=5){
+        sum+=(count*2);
+        count++;
+    }
+        document.write(sum+"<br>");
+}
+</script>
+
+</head>
+<body onload="writename()">
+</body>
+</html>
