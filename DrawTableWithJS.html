@@ -1,0 +1,39 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+  </body>
+
+
+  <script type="text/javascript">
+	function gugu(){
+      var arg_len = arguments.length;
+      var gvec = new Array();
+    
+	  document.write("<table style='border:1px solid'>");
+      if(arg_len == 0){ 
+        ; // wrong argv
+      }
+      else if(arg_len == 1){ 
+		document.write("<tr>");
+        for(x=1; x<10; x++){
+          gvec.push(arguments[0] * x);
+          document.write("<td style='border:1px solid'>"+arguments[0]+"*"+x+"="+gvec[gvec.length-1]+"</td>");
+        }
+		document.write("</tr>");
+      }
+      else if(arg_len == 2){
+		document.write("<tr>");
+		gvec.push(arguments[0] * arguments[1]);
+		console.log(arguments[0], arguments[1]);
+        document.write("<td>"+arguments[0]+"*"+arguments[1]+"="+gvec[gvec.length-1]+"</td>");
+		document.write("</tr>");
+      }
+      else{
+        ; //wrong argv
+      }
+	  document.write("</table>");
+    }
+  </script>
+</html>
